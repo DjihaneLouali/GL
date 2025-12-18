@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentmanagementsystem.controller.ViewController">
+   <children>
+      <BorderPane layoutY="6.0" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+         <top>
+            <AnchorPane prefHeight="60.0" prefWidth="1200.0" styleClass="semi-top-form" stylesheets="@view.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="6.0" layoutY="-7.0" prefHeight="40.0" prefWidth="1200.0" styleClass="top-form" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-7.0">
+                     <children>
+                        <Label layoutX="70.0" layoutY="20.0" text="Student Management System">
+                           <font>
+                              <Font name="Tahoma" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="close" layoutX="1131.0" layoutY="17.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="54.0" styleClass="close" text="X" />
+                        <Button fx:id="minimize" layoutX="1077.0" layoutY="17.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="54.0" styleClass="minimize" text="-" />
+                     </children>
+                     <stylesheets>
+                        <URL value="@view.css" />
+                     </stylesheets>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="540.0" prefWidth="214.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="540.0" prefWidth="214.0" styleClass="nav-form" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="50.0" layoutY="40.0" text="USTHB" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Line endX="82.0" layoutX="100.0" layoutY="129.0" startX="-83.0" stroke="#fffbfb" />
+                        <Button fx:id="home_Btn" layoutX="18.0" layoutY="142.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="165.0" styleClass="nav-btn" text="Home" />
+                        <Button fx:id="addStudents_Btn" layoutX="16.0" layoutY="184.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="167.0" styleClass="nav-btn" text="Add Students" />
+                        <Button fx:id="availablecourses_Btn" layoutX="17.0" layoutY="230.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="167.0" styleClass="nav-btn" text="Available Courses" />
+                        <Button fx:id="studentGrade_Btn" layoutX="16.0" layoutY="275.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="167.0" styleClass="nav-btn" text="Grade of Students" />
+                     </children>
+                     <stylesheets>
+                        <URL value="@view.css" />
+                     </stylesheets>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="540.0" prefWidth="986.0" BorderPane.alignment="CENTER">
+               <children>
+                  
+                  <!-- HOME FORM -->
+                  <AnchorPane fx:id="home_form" prefHeight="540.0" prefWidth="986.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="509.0" prefWidth="964.0" styleClass="white-bg" stylesheets="@view.css">
+                           <children>
+                              <Label layoutX="300.0" layoutY="50.0" prefHeight="37.0" prefWidth="318.0" text="Welcome to USTHB" textFill="#2d658c">
+                                 <font>
+                                    <Font name="Arial Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              
+                              <Label layoutX="290.0" layoutY="97.0" text="Student Management System" textFill="#2ca772">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Label>
+                              
+                              <Label layoutX="378.0" layoutY="151.0" text="Quick Stats" textFill="#2ca772">
+                                 <font>
+                                    <Font name="Arial Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              
+                              <AnchorPane layoutX="150.0" layoutY="240.0" prefHeight="150.0" prefWidth="250.0" styleClass="nav-form" stylesheets="@view.css">
+                                 <children>
+                                    <Label layoutX="60.0" layoutY="30.0" text="Total Students" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="totalStudentsLabel" layoutX="110.0" layoutY="80.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              
+                              <AnchorPane layoutX="500.0" layoutY="240.0" prefHeight="150.0" prefWidth="250.0" styleClass="nav-form" stylesheets="@view.css">
+                                 <children>
+                                    <Label layoutX="60.0" layoutY="30.0" text="Total Courses" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="totalCoursesLabel" layoutX="110.0" layoutY="80.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  
+                  <!-- ADD STUDENTS FORM -->
+                  <AnchorPane fx:id="addStudents_form" prefHeight="540.0" prefWidth="986.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="5.0" layoutY="6.0" prefHeight="537.0" prefWidth="992.0" styleClass="white-bg" stylesheets="@view.css">
+                           <children>
+                              <AnchorPane layoutX="17.0" layoutY="1.0" prefHeight="292.0" prefWidth="966.0" styleClass="white-bg" stylesheets="@view.css">
+                                 <children>
+                                    <TextField fx:id="addStudents_search" layoutX="42.0" layoutY="24.0" prefHeight="25.0" prefWidth="282.0" promptText="Search" styleClass="search" stylesheets="@view.css" />
+                                    <TableView fx:id="addStudents_tableView" layoutX="14.0" layoutY="61.0" prefHeight="218.0" prefWidth="954.0" stylesheets="@view.css">
+                                      <columns>
+                                        <TableColumn fx:id="addStudents_col_id" prefWidth="89.0" text="ID" />
+                                        <TableColumn fx:id="addStudents_col_firstName" prefWidth="104.0" text="First name" />
+                                          <TableColumn fx:id="addStudents_col_lastName" minWidth="6.0" prefWidth="99.0" text="Last name" />
+                                          <TableColumn fx:id="addStudents_col_gender" prefWidth="78.0" text="Gender" />
+                                          <TableColumn fx:id="addStudents_col_email" prefWidth="350.0" text="Email" />
+                                          <TableColumn fx:id="addStudents_col_course" prefWidth="232.0" text="Courses" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="35.0" layoutY="317.0" prefHeight="15.0" prefWidth="87.0" text="Student ID:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="addStudents_id" layoutX="112.0" layoutY="314.0" styleClass="textfield" stylesheets="@view.css" />
+                              <Label layoutX="35.0" layoutY="371.0" prefHeight="15.0" prefWidth="87.0" text="First name:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="addStudents_fiestName" layoutX="112.0" layoutY="368.0" styleClass="textfield" stylesheets="@view.css" />
+                              <Label layoutX="35.0" layoutY="416.0" prefHeight="15.0" prefWidth="87.0" text="Last name:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="addStudents_lastName" layoutX="112.0" layoutY="413.0" styleClass="textfield" stylesheets="@view.css" />
+                              <Label layoutX="425.0" layoutY="318.0" text="Gender:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="addStudents_gender" layoutX="485.0" layoutY="315.0" prefWidth="150.0" stylesheets="@view.css" />
+                              
+                              <!-- COURSES CHECKBOX CONTAINER -->
+                              <Label layoutX="660.0" layoutY="318.0" text="Courses:" textFill="#2d658c">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane fitToWidth="true" layoutX="730.0" layoutY="315.0" prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-color: #2d658c; -fx-border-width: 1px;" styleClass="textfield" stylesheets="@view.css">
+                                 <content>
+                                    <VBox fx:id="addStudents_courseCheckBoxContainer" spacing="8" style="-fx-background-color: white;">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                              
+                              <Label layoutX="35.0" layoutY="455.0" prefHeight="15.0" prefWidth="87.0" text="Email:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="addStudents_email" layoutX="111.0" layoutY="452.0" prefHeight="25.0" prefWidth="414.0" styleClass="textfield" stylesheets="@view.css" />
+                              <Button fx:id="addStudents_addBtn" layoutX="877.0" layoutY="488.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="add-btn" stylesheets="@view.css" text="Add" />
+                              <Button fx:id="addStudents_updateBtn" layoutX="795.0" layoutY="488.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="update-btn" stylesheets="@view.css" text="Update" />
+                              <Button fx:id="addStudents_deleteBtn" layoutX="709.0" layoutY="488.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="delete-btn" stylesheets="@view.css" text="Delete" />
+                              <Button fx:id="addStudents_saveBtn" layoutX="627.0" layoutY="488.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="save-btn" stylesheets="@view.css" text="Save" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  
+                  <!-- AVAILABLE COURSES FORM -->
+                  <AnchorPane fx:id="availableCourse_form" prefHeight="540.0" prefWidth="986.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="19.0" layoutY="15.0" prefHeight="510.0" prefWidth="240.0" styleClass="white-bg">
+                           <children>
+                              <Label layoutX="14.0" layoutY="39.0" text="Course:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="availableCourse_course" layoutX="76.0" layoutY="35.0" prefHeight="25.0" prefWidth="150.0" />
+                              <Label layoutX="14.0" layoutY="87.0" text="Teacher:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="availableCourse_teacher" layoutX="76.0" layoutY="83.0" prefHeight="25.0" prefWidth="150.0" />
+                              <Label layoutX="14.0" layoutY="133.0" text="Coefficient:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="availableCourse_Credit" layoutX="90.0" layoutY="129.0" prefHeight="25.0" prefWidth="136.0" />
+                              <Label layoutX="14.0" layoutY="175.0" text="Semester:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="availableCourse_semester" layoutX="90.0" layoutY="171.0" prefWidth="136.0" promptText="S1/S2" />
+                              <Button fx:id="availableCourse_addBtn" layoutX="118.0" layoutY="230.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" styleClass="add-btn" stylesheets="@view.css" text="Add" />
+                              <Button fx:id="availableCourse_updateBtn" layoutX="33.0" layoutY="230.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" styleClass="update-btn" stylesheets="@view.css" text="Update" />
+                              <Button fx:id="availableCourse_deleteBtn" layoutX="124.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" styleClass="delete-btn" stylesheets="@view.css" text="Delete" />
+                              <Button fx:id="availableCourse_saveBtn" layoutX="35.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" styleClass="save-btn" stylesheets="@view.css" text="Save" />
+                           </children>
+                           <stylesheets>
+                              <URL value="@view.css" />
+                           </stylesheets>
+                        </AnchorPane>
+                        <AnchorPane layoutX="275.0" layoutY="15.0" prefHeight="510.0" prefWidth="695.0" styleClass="white-bg">
+                           <children>
+                              <TableView fx:id="availableCourse_tableView" layoutX="20.0" layoutY="20.0" prefHeight="475.0" prefWidth="655.0">
+                                <columns>
+                                  <TableColumn fx:id="availableCourse_col_course" prefWidth="200.0" text="Course" />
+                                  <TableColumn fx:id="availableCourse_col_teacher" prefWidth="180.0" text="Teacher" />
+                                  <TableColumn fx:id="availableCourse_col_credit" prefWidth="135.0" text="Coefficient" />
+                                  <TableColumn fx:id="availableCourse_col_semester" prefWidth="138.0" text="Semester" />
+                                </columns>
+                              </TableView>
+                           </children>
+                           <stylesheets>
+                              <URL value="@view.css" />
+                           </stylesheets>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  
+                  <!-- STUDENT GRADE FORM -->
+                  <AnchorPane fx:id="studentGrade_form" prefHeight="540.0" prefWidth="986.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="510.0" prefWidth="240.0" styleClass="white-bg" stylesheets="@view.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Student:"><font><Font name="Tahoma" size="13.0" /></font></Label>
+                              <ComboBox fx:id="studentGrade_studentSelect" layoutX="14.0" layoutY="35.0" prefWidth="210.0" promptText="Select Student" />
+                              
+                              <Label layoutX="14.0" layoutY="75.0" text="Semester:"><font><Font name="Tahoma" size="13.0" /></font></Label>
+                              <ComboBox fx:id="studentGrade_semesterSelect" layoutX="14.0" layoutY="95.0" prefWidth="210.0" promptText="Select S1/S2" />
+                              
+                              <Label layoutX="14.0" layoutY="135.0" text="Course:"><font><Font name="Tahoma" size="13.0" /></font></Label>
+                              <ComboBox fx:id="studentGrade_courseSelect" layoutX="14.0" layoutY="155.0" prefWidth="210.0" promptText="Select Course" />
+                              
+                              <Label layoutX="14.0" layoutY="195.0" text="Midterm (40%):"><font><Font name="Tahoma" size="13.0" /></font></Label>
+                              <TextField fx:id="studentGrade_midterm" layoutX="14.0" layoutY="215.0" prefWidth="210.0" promptText="0-20" />
+                              
+                              <Label layoutX="14.0" layoutY="255.0" text="Final (60%):"><font><Font name="Tahoma" size="13.0" /></font></Label>
+                              <TextField fx:id="studentGrade_final" layoutX="14.0" layoutY="275.0" prefWidth="210.0" promptText="0-20" />
+                              
+                              <Label layoutX="14.0" layoutY="310.0" text="Course Grade:" textFill="#2d658c"><font><Font name="Tahoma Bold" size="13.0" /></font></Label>
+                              <Label fx:id="studentGrade_courseGrade" layoutX="14.0" layoutY="330.0" text="0.00/20" textFill="#2ca772"><font><Font name="System Bold" size="18.0" /></font></Label>
+                              
+                              <Button fx:id="studentGrade_addBtn" layoutX="14.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" styleClass="add-btn" stylesheets="@view.css" text="Add" />
+                              <Button fx:id="studentGrade_updateBtn" layoutX="124.0" layoutY="375.0" mnemonicParsing="false" prefWidth="100.0" styleClass="update-btn" stylesheets="@view.css" text="Update" />
+                              <Button fx:id="studentGrade_deleteBtn" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" prefWidth="100.0" styleClass="delete-btn" stylesheets="@view.css" text="Delete" />
+                              <Button fx:id="studentGrade_saveBtn" layoutX="124.0" layoutY="415.0" mnemonicParsing="false" prefWidth="100.0" styleClass="save-btn" stylesheets="@view.css" text="Save" />
+                              
+                              <Label layoutX="14.0" layoutY="465.0" text="Strategy:"><font><Font name="Tahoma" size="11.0" /></font></Label>
+                              <ComboBox fx:id="studentGrade_strategySelect" layoutX="14.0" layoutY="482.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+
+                        <AnchorPane layoutX="268.0" layoutY="14.0" prefHeight="510.0" prefWidth="480.0" styleClass="white-bg" stylesheets="@view.css">
+                           <children>
+                              <TableView fx:id="studentGrade_tableView" layoutX="10.0" layoutY="10.0" prefHeight="490.0" prefWidth="460.0">
+                                <columns>
+                                  <TableColumn fx:id="studentGrade_col_course" prefWidth="120.0" text="Course" />
+                                  <TableColumn fx:id="studentGrade_col_midterm" prefWidth="70.0" text="Mid" />
+                                  <TableColumn fx:id="studentGrade_col_final" prefWidth="70.0" text="Final" />
+                                  <TableColumn fx:id="studentGrade_col_grade" prefWidth="70.0" text="Grade" />
+                                  <TableColumn fx:id="studentGrade_col_coef" prefWidth="60.0" text="Coef" />
+                                  <TableColumn fx:id="studentGrade_col_status" prefWidth="65.0" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+
+                        <AnchorPane layoutX="760.0" layoutY="14.0" prefHeight="510.0" prefWidth="210.0" styleClass="white-bg" stylesheets="@view.css">
+                           <children>
+                              <Label layoutX="10.0" layoutY="15.0" text="Statistics Dashboard" textFill="#2d658c">
+                                 <font><Font name="System Bold" size="16.0" /></font>
+                              </Label>
+                              <Line endX="180.0" layoutX="15.0" layoutY="45.0" stroke="#ddd" />
+                              
+                              <VBox layoutX="15.0" layoutY="60.0" spacing="12.0">
+                                 <children>
+                                    <VBox>
+                                       <Label text="S1 Average:" textFill="#555"><font><Font size="12.0" /></font></Label>
+                                       <Label fx:id="studentGrade_sem1Avg" text="0.00/20" textFill="#2d658c"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                       <Label fx:id="studentGrade_sem1Status" text="�" textFill="#888" />
+                                    </VBox>
+                                    <VBox>
+                                       <Label text="S2 Average:" textFill="#555"><font><Font size="12.0" /></font></Label>
+                                       <Label fx:id="studentGrade_sem2Avg" text="0.00/20" textFill="#2d658c"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                       <Label fx:id="studentGrade_sem2Status" text="�" textFill="#888" />
+                                    </VBox>
+                                    <VBox style="-fx-background-color: #f4f4f4; -fx-padding: 10;">
+                                       <Label text="ANNUAL AVERAGE:" textFill="#555"><font><Font size="11.0" /></font></Label>
+                                       <Label fx:id="studentGrade_annualAvg" text="0.00/20" textFill="#2ca772"><font><Font name="System Bold" size="24.0" /></font></Label>
+                                    </VBox>
+                                    <Label text="Total Courses:"><font><Font size="12.0" /></font></Label>
+                                    <Label fx:id="studentGrade_totalCourses" text="0" />
+                                    <Label text="Total Coef:"><font><Font size="12.0" /></font></Label>
+                                    <Label fx:id="studentGrade_totalCoef" text="0" />
+                                    <Label text="Passed:"><font><Font size="12.0" /></font></Label>
+                                    <Label fx:id="studentGrade_passedCourses" text="0/0" />
+                                    <Label text="OVERALL STATUS:"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    <Label fx:id="studentGrade_overallStatus" text="�" textFill="#888"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        
+                     </children>
+                  </AnchorPane>
+                  
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
